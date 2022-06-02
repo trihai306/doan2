@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/tintuc.css'/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+    <title>Tin tuc</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Danh sách tin tức</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/tintuc">tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/themtintuc">thêm tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listtintuc">List tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Đăng ký</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <% tintucArray.forEach((tintuc)=>{ %>
+                <div class="col-md-6 col-xl-4">
+                    <article class="post">
+                        <div class="article-v2">
+                            <figure class="article-thumb">
+                                <a href="/tintuc/<%=tintuc.id%>">
+                                    <img src="images/<%=tintuc.image%>" alt="blog image" />
+                                </a>
+                            </figure>
+                            <!-- /.article-thumb -->
+                            <div class="article-content-main">
+                                <div class="article-header">
+                                    <h2 class="entry-title"><a href="/tintuc/<%=tintuc.id%>"><%=tintuc.title %>.</a></h2>
+                                    <!-- /.entry-meta -->
+                                </div>
+                                <!-- /.article-header -->
+                                <!--  /.article-content -->
+                                <div class="article-footer">
+                                    <div class="row">
+                                        <div class="col-6 text-left footer-link">
+                                            <a href="/tintuc/<%=tintuc.id%>" class="more-link">Read More</a>
+                                        </div>
+
+                                    </div>
+                                    <!--  /.row -->
+                                </div>
+                                <!--  /.article-footer -->
+                            </div>
+                            <!--  /.article-content-main -->
+                        </div>
+                        <!--  /.article-v2 -->
+                    </article>
+                    <!--  /.post -->
+                </div>
+                <!--  /.col-md-6 -->
+                    <%})%>
+            </div>
+            <!--  /.blog-carousel -->
+        </div>
+        <!--  /.col-12 -->
+    </div>
+    <!--  /.row -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
